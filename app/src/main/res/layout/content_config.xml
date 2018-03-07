@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
+    android:padding="16dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,83 +8,77 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="br.com.conectasampa.busy.ConfigActivity"
     tools:showIn="@layout/activity_config"
+    android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <ImageButton
-        android:id="@+id/img_incidente"
-        android:layout_width="wrap_content"
+        <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_weight="1"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_emergencia"
-        app:srcCompat="@android:drawable/ic_menu_info_details" />
+        android:orientation="horizontal">
 
-    <ImageButton
-        android:id="@+id/img_favorito"
-        android:layout_width="wrap_content"
+
+        <ImageButton
+            android:id="@+id/img_favorito"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@android:drawable/btn_star_big_on" />
+
+
+        <TextView
+            android:id="@+id/txt_favorito"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Favoritos"
+
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_weight="1"
-        android:foregroundGravity="center_vertical"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="0dp"
+        <ImageButton
+            android:id="@+id/img_emergencia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@android:drawable/ic_dialog_alert"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Emergência"
+            android:textStyle="bold"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="64dp"
-        android:layout_weight="1"
-        android:gravity="left"
-        android:text="Emergência"
-        android:textSize="16dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/img_emergencia"
-        app:layout_constraintTop_toBottomOf="@+id/txt_favorito" />
+        android:orientation="horizontal">
 
-    <ImageButton
-        android:id="@+id/img_emergencia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_weight="1"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_favorito"
-        app:srcCompat="@android:drawable/ic_dialog_alert" />
 
-    <TextView
-        android:id="@+id/txt_favorito"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_weight="1"
-        android:text="Favoritos"
-        android:textSize="16dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/img_favorito"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageButton
+            android:id="@+id/img_incidente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@android:drawable/ic_menu_info_details" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="0dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="88dp"
-        android:layout_weight="1"
-        android:text="Avisos de Incidentes"
-        android:textSize="16dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/img_incidente"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:text="Avisos de Incidentes" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
