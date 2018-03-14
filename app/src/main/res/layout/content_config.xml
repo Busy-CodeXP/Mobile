@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:padding="16dp"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_alignParentBottom="false"
+    android:orientation="vertical"
+    android:padding="16dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="br.com.conectasampa.busy.ConfigActivity"
-    tools:showIn="@layout/activity_config"
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    tools:showIn="@layout/activity_config">
 
-        <LinearLayout
-        android:layout_marginTop="20dp"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal">
 
 
         <ImageButton
             android:id="@+id/img_favorito"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="70dp"
+            android:layout_height="68dp"
+            android:layout_gravity="center_vertical"
             app:srcCompat="@android:drawable/btn_star_big_on" />
 
 
@@ -29,37 +30,42 @@
             android:id="@+id/txt_favorito"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="Favoritos"
+            android:layout_gravity="center"
+            android:paddingLeft="10dp"
 
-            android:layout_gravity="center"/>
+            android:text="Favoritos"
+            android:textSize="16dp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:orientation="horizontal">
 
         <ImageButton
             android:id="@+id/img_emergencia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@android:drawable/ic_dialog_alert"/>
+            android:layout_gravity="center_vertical"
+            app:srcCompat="@mipmap/ic_alert" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingLeft="10dp"
             android:text="Emergência"
-            android:textStyle="bold"
-            android:layout_gravity="center"/>
+            android:textSize="16dp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:orientation="horizontal">
 
 
@@ -67,7 +73,8 @@
             android:id="@+id/img_incidente"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@android:drawable/ic_menu_info_details" />
+            android:layout_gravity="center_vertical"
+            app:srcCompat="@mipmap/ic_incidente" />
 
 
         <TextView
@@ -75,8 +82,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textStyle="bold"
-            android:text="Avisos de Incidentes" />
+            android:paddingLeft="10dp"
+            android:text="Avisos de Incidentes"
+            android:textSize="16dp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

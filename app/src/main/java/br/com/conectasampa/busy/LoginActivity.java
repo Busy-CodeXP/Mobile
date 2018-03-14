@@ -74,7 +74,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
                 if (!isPasswordValid(password)){
-                    MostraMensagem(act, "Erro na validação", "Senha inválida inválido");
+                    MostraMensagem(act, "Erro na validação", "Senha inválida");
                     return;
                 }
 
