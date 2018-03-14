@@ -1,7 +1,14 @@
 package br.com.conectasampa.busy;
 
+import android.Manifest;
+import android.app.Activity;
+import android.content.pm.PackageManager;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
+import android.widget.RatingBar;
+import android.widget.SearchView;
+import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -10,9 +17,14 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import static br.com.conectasampa.busy.UTIL.MessageHelper.MostraMensagem;
+
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    private TextView txt_buscaLinha;
+    private SearchView sv_lupaLinha;
+    private final Activity act = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,26 +34,32 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        txt_buscaLinha = (TextView) findViewById(R.id.txt_buscaLinha);
+        sv_lupaLinha = (SearchView) findViewById(R.id.sv_lupaLinha);
+
     }
 
-
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-23.536629, -46.651696);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        // Add a marker in local and move the camera
+        LatLng local = new LatLng(-23.535978, -46.612752);
+        mMap.addMarker(new MarkerOptions().position(local).title("Casa da Dani"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(local));
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED) {
+            mMap.setMyLocationEnabled(true);
+        } else {
+            // Show rationale and request permission.
+            MostraMensagem(act, "Erro na validação", "Sem permissão. Ative a localização");
+            return;
+        }
+
 
     }
+
+
 }
