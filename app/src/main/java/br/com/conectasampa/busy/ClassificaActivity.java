@@ -8,10 +8,8 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.RatingBar;
 import android.widget.RatingBar.OnRatingBarChangeListener;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import static br.com.conectasampa.busy.UTIL.MessageHelper.MostraMensagem;
+import static br.com.conectasampa.busy.util.MessageHelper.MostraMensagem;
 import static java.lang.Float.valueOf;
 
 public class ClassificaActivity extends AppCompatActivity {
@@ -46,6 +44,13 @@ public class ClassificaActivity extends AppCompatActivity {
             public void onRatingChanged(RatingBar ratingBar, float avaliacao, boolean fromUser) {
                 //txtValorAvaliacao.setText(String.valueOf(avaliacao));
                 valor = String.valueOf(avaliacao);
+         /*
+
+          ***************************************************************
+          * guardar o ID da linha, ID do usuário e o valor da avaliação
+          *           *
+          * *************************************************************
+          */
 
 
             }

@@ -9,22 +9,47 @@
     </style>
 
     <style name="AppTheme.NoActionBar">
+
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 
     <!-- FullScreen theme. -->
-    <style name="FullScreen" parent="AppTheme">
+    <style name="FullScreen" parent="Theme.AppCompat.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
     </style>
 
+    <style name="letrapequena" parent="Theme.AppCompat" />
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="TextViewCustomRobotoLight">
+        <item name="fontPath">fonts/Roboto-Light.ttf</item>
+    </style>
 
+    <style name="TextViewCustomRobotoRegular">
+        <item name="fontPath">fonts/Roboto-Regular.ttf</item>
+    </style>
+
+    <style name="TextViewCustomRobotoMedium">
+        <item name="fontPath">fonts/Roboto-Medium.ttf</item>
+    </style>
+
+    <style name="TextViewCustomRobotoBold">
+        <item name="fontPath">fonts/Roboto-Bold.ttf</item>
+    </style>
+
+    <style name="TextViewCustomRobotoBlack">
+        <item name="fontPath">fonts/Roboto-Black.ttf</item>
+    </style>
+
+    <style name="TextViewCustomRusso">
+        <item name="fontPath">fonts/russo.ttf</item>
+    </style>
 </resources>
 
 

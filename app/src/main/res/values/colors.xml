@@ -4,4 +4,14 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="bgSplash">#FFFFFF</color>
+
+    <color name="color1">#283033</color>
+    <color name="color2">#0893C3</color>
+    <color name="color3">#38B7DF</color>
+    <color name="color4">#8DDEFF</color>
+    <color name="color5">#5F3FFF</color>
+
+
 </resources>
+
+

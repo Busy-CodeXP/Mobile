@@ -1,4 +1,4 @@
-package br.com.conectasampa.busy.UTIL;
+package br.com.conectasampa.busy.util;
 
 import android.app.Activity;
 import android.app.AlertDialog;

@@ -11,8 +11,7 @@
         android:layout_gravity="center_horizontal"
         android:textSize="25dp"
         android:textStyle="bold"
-        android:layout_margin="15dp"
-
+        android:layout_margin="25dp"
         android:text="Avalie sua viagem" />
 
     <RatingBar

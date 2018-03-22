@@ -20,10 +20,11 @@
 
         <ImageButton
             android:id="@+id/img_favorito"
-            android:layout_width="70dp"
-            android:layout_height="68dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            app:srcCompat="@android:drawable/btn_star_big_on" />
+            android:background="@color/bgSplash"
+            app:srcCompat="@drawable/ic_favorito" />
 
 
         <TextView
@@ -32,34 +33,11 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:paddingLeft="10dp"
-
             android:text="Favoritos"
-            android:textSize="16dp"
-            android:textStyle="bold" />
+            android:textSize="20dp"
+            android:textStyle="bold"
+           />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:id="@+id/img_emergencia"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            app:srcCompat="@mipmap/ic_alert" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:paddingLeft="10dp"
-            android:text="Emergência"
-            android:textSize="16dp"
-            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -74,7 +52,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            app:srcCompat="@mipmap/ic_incidente" />
+            android:background="@color/bgSplash"
+            app:srcCompat="@drawable/ic_incidente" />
 
 
         <TextView
@@ -84,7 +63,32 @@
             android:layout_gravity="center"
             android:paddingLeft="10dp"
             android:text="Avisos de Incidentes"
-            android:textSize="16dp"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/img_emergencia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@color/bgSplash"
+            app:srcCompat="@drawable/ic_emergencia" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingLeft="10dp"
+            android:text="Emergência"
+            android:textSize="20dp"
             android:textStyle="bold" />
 
     </LinearLayout>

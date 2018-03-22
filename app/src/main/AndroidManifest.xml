@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="br.com.conectasampa.busy">
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
@@ -10,12 +11,14 @@
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
-         location permissions for the 'MyLocation' functionality. 
+         location permissions for the 'MyLocation' functionality.
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".util.CustomApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -27,31 +30,52 @@
             android:value="AIzaSyDhGRJ2LjpnE7hvuFI8HDD8wU_Ma3QHILg" />
 
         <activity
-            android:name=".LoginActivity"
-            android:label="@string/app_name" />
-        <activity
             android:name=".CadastroActivity"
-            android:label="@string/title_activity_cadastro"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="@string/title_activity_cadastro">
+
+        </activity>
+        <activity
+            android:name=".ClassificaActivity"
+            android:label="Classificação da Linha">
+
+        </activity>
+
         <activity
             android:name=".ConfigActivity"
             android:label="@string/title_activity_config"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+
+
         <activity
-            android:name=".ClassificaActivity"
-            android:label="Classificação da Linha" />
+            android:name=".LinhasActivity"
+            android:label="Linhas">
+
+        </activity>
+
+        <activity android:name=".LoginActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+
+        </activity>
+
+
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps">
 
         </activity>
-        <activity android:name=".SplashScreenActivity">
+
+        <activity
+            android:name=".SplashScreenActivity"
+            android:theme="@style/FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

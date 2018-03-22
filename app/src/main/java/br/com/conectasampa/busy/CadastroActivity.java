@@ -8,11 +8,13 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+import static br.com.conectasampa.busy.util.CustomApplication.initTextType;
 
-import static br.com.conectasampa.busy.UTIL.MessageHelper.MostraMensagem;
+
+import static br.com.conectasampa.busy.util.MessageHelper.MostraMensagem;
 
 public class CadastroActivity extends AppCompatActivity {
 
