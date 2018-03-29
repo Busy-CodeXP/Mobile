@@ -1,42 +1,85 @@
 package model;
-
-/**
- * Created by dfernandes on 19/03/2018.
- */
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class Linhas {
 
-    private String nomeLinha;
-    private int imagem; // vai armazenar o identificador do recurso
-    private String descricaoLinha;
+    @SerializedName("cl")
+    @Expose
+    private Integer cl;
+    @SerializedName("lc")
+    @Expose
+    private Boolean lc;
+    @SerializedName("lt")
+    @Expose
+    private String lt;
+    @SerializedName("sl")
+    @Expose
+    private Integer sl;
+    @SerializedName("tl")
+    @Expose
+    private Integer tl;
+    @SerializedName("tp")
+    @Expose
+    private String tp;
+    @SerializedName("ts")
+    @Expose
+    private String ts;
 
-    public Linhas (String nomeLinha, String descricaoLinha, int imagem) {
-        this.nomeLinha = nomeLinha;
-        this.descricaoLinha = descricaoLinha;
-        this.imagem = imagem;
+    public Integer getCl() {
+        return cl;
     }
 
-    public String getNomeLinha() {
-        return nomeLinha;
+    public void setCl(Integer cl) {
+        this.cl = cl;
     }
 
-    public void setNomeLinha(String nomeLinha) {
-        this.nomeLinha = nomeLinha;
+    public Boolean getLc() {
+        return lc;
     }
 
-    public int getImagem() {
-        return imagem;
+    public void setLc(Boolean lc) {
+        this.lc = lc;
     }
 
-    public void setImagem(int imagem) {
-        this.imagem = imagem;
+    public String getLt() {
+        return lt;
     }
 
-    public String getDescricaoLinha() {
-        return descricaoLinha;
+    public void setLt(String lt) {
+        this.lt = lt;
     }
 
-    public void setDescricaoLinha(String descricaoLinha) {
-        this.descricaoLinha = descricaoLinha;
+    public Integer getSl() {
+        return sl;
     }
+
+    public void setSl(Integer sl) {
+        this.sl = sl;
+    }
+
+    public Integer getTl() {
+        return tl;
+    }
+
+    public void setTl(Integer tl) {
+        this.tl = tl;
+    }
+
+    public String getTp() {
+        return tp;
+    }
+
+    public void setTp(String tp) {
+        this.tp = tp;
+    }
+
+    public String getTs() {
+        return ts;
+    }
+
+    public void setTs(String ts) {
+        this.ts = ts;
+    }
+
 }

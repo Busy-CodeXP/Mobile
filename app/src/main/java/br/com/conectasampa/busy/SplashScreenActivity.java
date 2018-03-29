@@ -87,7 +87,7 @@ public class SplashScreenActivity extends AppCompatActivity {
             @Override
             public void run() {
                 //Após o tempo definido irá executar a próxima
-                Intent intent = new Intent(SplashScreenActivity.this, LoginActivity.class);
+                Intent intent = new Intent(SplashScreenActivity.this, PesquisaLinhaActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
 
                 //PARA IRMOS PARA UMA NOVA ACTIVITY

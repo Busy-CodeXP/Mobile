@@ -79,6 +79,17 @@
                 android:text="@string/action_sign_in"
                 android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/txt_semSenha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Esqueceu sua senha"
+                android:textSize="16dp"
+                android:textStyle="italic"
+                android:gravity="center"
+                android:paddingVertical="@dimen/activity_vertical_margin"
+                android:clickable="true"
+                />
 
             <TextView
                 android:id="@+id/txt_semCadastro"
@@ -88,6 +99,7 @@
                 android:textSize="16dp"
                 android:textStyle="italic"
                 android:gravity="center"
+
                 android:paddingVertical="@dimen/activity_vertical_margin"
                 android:clickable="true"
                 />

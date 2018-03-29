@@ -1,10 +1,11 @@
 package services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import interfaces.ApiResponde;
-import model.Repo;
-import model.User;
+import model.Linhas;
+import model.Usuario;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -16,47 +17,43 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 
 public class BusyRestService {
-
-
     IBusyService service;
-
     public BusyRestService() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://api.github.com/")
+                .baseUrl("http://ffaae593.ngrok.io/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         this.service = retrofit.create(IBusyService.class);
     }
 
-    public void repos(String username, final ApiResponde.ApiResponse<List<Repo>> callback) {
-        Call<List<Repo>> repos = service.listRepos(username);
-        repos.enqueue(new Callback<List<Repo>>() {
+    public void cadastrarUsuario(Usuario usuario, final ApiResponde.ApiResponse<Usuario> callback){
+        Call<Usuario> novousuario = service.cadastrarUsuario(usuario);
+        novousuario.enqueue(new Callback<Usuario>() {
             @Override
-            public void onResponse(Call<List<Repo>> call, Response<List<Repo>> response) {
-                callback.OnResponse(response.body());
+            public void onResponse(Call<Usuario> call, Response<Usuario> response) {
+                callback.OnSucess(response.body());
             }
 
             @Override
-            public void onFailure(Call<List<Repo>> call, Throwable t) {
+            public void onFailure(Call<Usuario> call, Throwable t) {
                 callback.OnError(t);
             }
         });
     }
 
-    public void users(final ApiResponde.ApiResponse<List<User>> callback) {
-        Call<List<User>> repos = service.listUsers();
-        repos.enqueue(new Callback<List<User>>() {
+    public void listaLinhas(String linha, final ApiResponde.ApiResponse<ArrayList<Linhas>> callback){
+        Call<ArrayList<Linhas>> linhas = service.listaLinhas(linha);
+        linhas.enqueue(new Callback<ArrayList<Linhas>>() {
             @Override
-            public void onResponse(Call<List<User>> call, Response<List<User>> response) {
-                callback.OnResponse(response.body());
+            public void onResponse(Call<ArrayList<Linhas>> call, Response<ArrayList<Linhas>> response) {
+                callback.OnSucess(response.body());
             }
 
             @Override
-            public void onFailure(Call<List<User>> call, Throwable t) {
+            public void onFailure(Call<ArrayList<Linhas>> call, Throwable t) {
                 callback.OnError(t);
             }
         });
     }
-
 }

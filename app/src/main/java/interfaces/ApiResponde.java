@@ -1,5 +1,7 @@
 package interfaces;
 
+import model.Usuario;
+
 /**
  * Created by GIS on 16/03/2018.
  */
@@ -7,7 +9,7 @@ package interfaces;
 public interface ApiResponde {
 
     public interface ApiResponse<T> {
-        void OnResponse(T data);
+        void OnSucess(T data);
         void OnError(Throwable t);
     }
 

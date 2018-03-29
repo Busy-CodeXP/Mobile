@@ -22,6 +22,12 @@
     <string name="title_activity_splash_screen">SplashScreenActivity</string>
     <string name="title_activity_login_teste">Sign in</string>
     <string name="title_activity_login2">Sign in</string>
+    <string name="title_activity_principal">B U S Y</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Configurações</string>
 
 
 </resources>

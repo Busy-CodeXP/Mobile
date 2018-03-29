@@ -1,56 +1,8 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/map"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
-
-
-    <LinearLayout
-
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:orientation="vertical"
-        android:layout_weight="1">
-
-        <TextView
-            android:id="@+id/txt_buscaLinha"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/activity_vertical_margin"
-            android:layout_marginTop="10dp"
-            android:text="Busque sua linha:"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-
-        <SearchView
-            android:id="@+id/sv_lupaLinha"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:focusable="true"
-            android:queryHint="Digite o número ou nome da linha"/>
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="2">
-
-        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:map="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/map"
-            android:name="com.google.android.gms.maps.SupportMapFragment"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            map:cameraZoom="15"
-            tools:context="br.com.conectasampa.mapa.MapsActivity" />
-
-
-    </LinearLayout>
-
-
-</LinearLayout>
+    tools:context="br.com.conectasampa.busy.MapsActivity" />

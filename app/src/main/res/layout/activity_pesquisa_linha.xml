@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="br.com.conectasampa.busy.PesquisaLinhaActivity">
+
+    <TextView
+        android:id="@+id/txt_buscaLinha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:textColor="@color/color5"
+        android:text="Busque sua linha:"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/busca"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:autofillHints="@string/prompt_password"
+            android:hint="Digite o nome ou número da linha"
+            android:layout_marginLeft="10dp"    />
+
+
+    <Button
+        android:id="@+id/btn_busca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginVertical="15dp"
+        android:hint="Busca"
+
+         />
+
+</LinearLayout>

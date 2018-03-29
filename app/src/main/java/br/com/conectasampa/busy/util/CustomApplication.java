@@ -15,7 +15,7 @@ public class CustomApplication extends Application {
 
     public static void initTextType() {
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-                .setDefaultFontPath("fonts/Roboto-Medium.ttf")
+                .setDefaultFontPath("fonts/Roboto-Light.ttf")
                 .setFontAttrId(R.attr.fontPath)
                 .build());
     }

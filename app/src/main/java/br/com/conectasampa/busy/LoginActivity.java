@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import services.BusyRestService;
+
 import static br.com.conectasampa.busy.util.MessageHelper.MostraMensagem;
 
 public class LoginActivity extends AppCompatActivity {
@@ -36,11 +38,14 @@ public class LoginActivity extends AppCompatActivity {
         mSemCadastro.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(act, MapsActivity.class);
+                Intent i = new Intent(act, PesquisaLinhaActivity.class);
                 startActivity(i);
                 finish();
             }
         });
+
+        //Criando um restservice aqui, é o metodo que vai fazer a comunicação com back
+        final BusyRestService service = new BusyRestService();
 
         Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
@@ -49,17 +54,27 @@ public class LoginActivity extends AppCompatActivity {
                 String email = mEmailView.getText().toString();
                 String password = mPasswordView.getText().toString();
 
+
                 if(!isEmailValid(email)){
-                    MostraMensagem(act, "Erro na validação", "E-mail inválido");
+                    MostraMensagem(act, "Erro na validação", "E-mail não cadastrado, deseja se cadastrar?");
+
+                    /*Se o email nao existir perguntar se deseja se cadastrar e chamar a activity Cadastro.
+                    Intent i = new Intent(act, CadastroActivity.class);
+                    startActivity(i);
+                    finish();
+                    */
+
                     return;
+
                 }
+
 
                 if (!isPasswordValid(password)){
                     MostraMensagem(act, "Erro na validação", "Senha inválida");
                     return;
                 }
 
-                Intent i = new Intent(act, ConfigActivity.class);
+                Intent i = new Intent(act, PesquisaLinhaActivity.class);
                 startActivity(i);
                 finish();
             }
