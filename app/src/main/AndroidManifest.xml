@@ -16,6 +16,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+
     <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
@@ -36,21 +37,23 @@
         <activity
             android:name=".ClassificaActivity"
             android:label="Classificação da Linha">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
-
-
 
         <activity
             android:name=".ConfigActivity"
             android:label="@string/title_activity_config"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".LinhasActivity"
             android:label="Linhas" />
+
+        <activity
+            android:name=".LinhasDetalheActivity"
+            android:label="Detalhe da Linha" />
+
+
         <activity
             android:name=".LoginActivity"
             android:label="@string/app_name"
@@ -59,7 +62,10 @@
         <activity
             android:name=".SplashScreenActivity"
             android:theme="@style/FullScreen">
-
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <activity

@@ -42,7 +42,8 @@ public class ClassificaActivity extends AppCompatActivity {
         final BusyRestService service = new BusyRestService();
 
         Intent intent = getIntent();
-        String linha  = getIntent().getStringExtra("codlinha");
+        String linha  = getIntent().getStringExtra("numlinha");
+
         ExibeLinha = (TextView) findViewById(R.id.linha);
         ExibeLinha.setText(linha);
     }
@@ -58,15 +59,13 @@ public class ClassificaActivity extends AppCompatActivity {
                 progressValor = progress;
                 if (progressValor == 0) {
                     seekBarValue = "Vazio/Confortável";
-                    //simpleSeekBar.setThumb(getResources().getDrawable(R.drawable.bus_green3));
+
                 }
                 else if (progressValor == 1) {
                     seekBarValue = "Parcialmente ocupado";
-                    //trocar o ícone par amarelo
 
                 } else
                     seekBarValue = "Lotado";
-                //trocar o ícone para vermelho
 
             }
 

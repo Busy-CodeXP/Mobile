@@ -8,49 +8,47 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.List;
 
-import interfaces.ApiResponde;
-import model.Linhas;
 import br.com.conectasampa.busy.adapter.LinhasAdapter;
+import br.com.conectasampa.busy.adapter.LinhasDetalheAdapter;
+import interfaces.ApiResponde;
+import model.LinhaDetalheResult;
+import model.Linhas;
+import model.LinhasDetalhe;
 import services.BusyRestService;
 
-import static br.com.conectasampa.busy.util.MessageHelper.MostraMensagem;
-
-public class LinhasActivity extends AppCompatActivity {
-
-
-    private ArrayList<Linhas> adicionarLinhas() {
-
-        ArrayList<Linhas> linhas = new ArrayList<Linhas>();
-
-         return linhas;
-
-    }
-
+public class LinhasDetalheActivity extends AppCompatActivity {
     private final Activity act = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_linhas_detalhes);
 
+        Intent intent = getIntent();
 
         final ListView lista = (ListView) findViewById(R.id.lvLinhas);
-        ArrayList<Linhas> linhas = adicionarLinhas();
-        final ArrayAdapter adapter = new LinhasAdapter(this, adicionarLinhas());
+        List<LinhasDetalhe> linhas = new ArrayList<LinhasDetalhe>();
+
+        String numLinha = intent.getStringExtra("numlinha");
+        String nomeLinha = intent.getStringExtra("nomelinha");
+
+       final ArrayAdapter adapter = new LinhasDetalheAdapter(this, linhas, numLinha, nomeLinha);
+
         lista.setAdapter(adapter);
 
         final BusyRestService service = new BusyRestService();
 
-        Intent intent = getIntent();
-        String pesquisa  = intent.getStringExtra("Busca");
 
-        service.listaLinhas(pesquisa, new ApiResponde.ApiResponse<ArrayList<Linhas>>() {
+        int buscaLinhaSensor  = intent.getIntExtra("prefixo", 0);
+
+        service.listaLinhasSensor(buscaLinhaSensor, new ApiResponde.ApiResponse<LinhaDetalheResult>() {
             @Override
-            public void OnSucess(ArrayList<Linhas> data) {
-                if (data != null) {
+            public void OnSucess(LinhaDetalheResult data) {
+                if (data != null){
                     adapter.clear();
-                    adapter.addAll(data);
+                    adapter.addAll(data.vs);
                     adapter.notifyDataSetChanged();
                 }
             }
@@ -62,7 +60,9 @@ public class LinhasActivity extends AppCompatActivity {
             }
         });
 
-        pesquisa="";
+
     }
+
+
 
 }

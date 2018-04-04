@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import interfaces.ApiResponde;
+import model.LinhaDetalheResult;
 import model.Linhas;
+import model.LinhasDetalhe;
 import model.Usuario;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -12,15 +14,12 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-/**
- * Created by GIS on 16/03/2018.
- */
-
 public class BusyRestService {
     IBusyService service;
     public BusyRestService() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://ffaae593.ngrok.io/api/")
+
+                .baseUrl("http://buzy.azurewebsites.net/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -56,4 +55,24 @@ public class BusyRestService {
             }
         });
     }
+
+    public void listaLinhasSensor(Integer cl, final ApiResponde.ApiResponse<LinhaDetalheResult> callback){
+        Call<LinhaDetalheResult> linhas = service.listaLinhasSensor(cl);
+        linhas.enqueue(new Callback<LinhaDetalheResult>() {
+            @Override
+            public void onResponse(Call<LinhaDetalheResult> call, Response<LinhaDetalheResult> response) {
+                callback.OnSucess(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<LinhaDetalheResult> call, Throwable t) {
+                callback.OnError(t);
+            }
+        });
+    }
+
+
+
+
+
 }

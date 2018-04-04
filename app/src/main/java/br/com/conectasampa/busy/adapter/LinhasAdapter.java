@@ -17,6 +17,7 @@ import java.security.Principal;
 import java.util.ArrayList;
 
 import br.com.conectasampa.busy.ClassificaActivity;
+import br.com.conectasampa.busy.LinhasDetalheActivity;
 import model.Linhas;
 import br.com.conectasampa.busy.R;
 
@@ -44,28 +45,38 @@ public class LinhasAdapter extends ArrayAdapter {
         TextView nomeLinha = (TextView) rowView.findViewById(R.id.txtNomeLinha);
         TextView descricaoLinha = (TextView) rowView.findViewById(R.id.txtDescricaoLinha);
         ImageView imagem = (ImageView) rowView.findViewById(R.id.icone);
+
         final Linhas linha = elementos.get(position);
 
         if(linha.getSl() == 1){
-            nomeLinha.setText(elementos.get(position).getLt());
+            nomeLinha.setText(elementos.get(position).getLt()+ " - " + linha.getTl());
             descricaoLinha.setText(elementos.get(position).getTp() + " - " + linha.getTs());
-            //imagem.setImageResource(elementos.get(position).getImagem());
+
         }else{
-            nomeLinha.setText(elementos.get(position).getLt());
+            nomeLinha.setText(elementos.get(position).getLt()+ " - " + linha.getTl());
             descricaoLinha.setText(elementos.get(position).getTs() + " - " + linha.getTp());
-            //imagem.setImageResource(elementos.get(position).getImagem());
+
         }
 
         rowView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(context, ClassificaActivity.class);
-                i.putExtra("codlinha", linha.getLt());
+
+                Intent i = new Intent(context, LinhasDetalheActivity.class);
+
+                i.putExtra("numlinha", linha.getLt() + " - " + linha.getTl());
+                i.putExtra("prefixo", linha.getCl());
+
+
+                if (linha.getSl() == 1){
+                 i.putExtra("nomelinha", linha.getTp()+ " - " + linha.getTs());
+                }else{
+                    i.putExtra("nomelinha",linha.getTs()+ " - " + linha.getTp());}
+
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.getApplicationContext().startActivity(i);
             }
         });
-
 
         return rowView;
     }

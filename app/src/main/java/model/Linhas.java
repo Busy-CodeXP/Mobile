@@ -26,6 +26,10 @@ public class Linhas {
     @Expose
     private String ts;
 
+
+
+
+
     public Integer getCl() {
         return cl;
     }
@@ -81,5 +85,9 @@ public class Linhas {
     public void setTs(String ts) {
         this.ts = ts;
     }
+
+
+
+
 
 }
