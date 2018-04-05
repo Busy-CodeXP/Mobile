@@ -63,7 +63,7 @@ public class LinhasDetalheAdapter extends ArrayAdapter {
         final LinhasDetalhe linha = elementos.get(position);
 
         TextView lotacaoLinha = (TextView) rowView.findViewById(R.id.txtLotacaoLinha);
-        lotacaoLinha.setText(elementos.get(position).getLotacao() + " %");
+        lotacaoLinha.setText("Lotação: " + elementos.get(position).getLotacao() + " %");
 
         if (Integer.parseInt(linha.getLotacao()) <= 30) {
             imagem.setImageResource(R.drawable.bus_green3);
